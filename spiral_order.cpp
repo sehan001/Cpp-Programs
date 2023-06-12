@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -12,33 +12,29 @@ int main()
             cin>>a[i][j];
         }
     }
-    int rs=0,re=m-1,cs=0,ce=n-1;
-    while(rs<=re && cs<=ce)
-    {
-        for(int col=cs;col<=ce;col++)
+        int rs=0,re=m-1,cs=0,ce=n-1;
+        while(rs<=re && cs<=ce)
         {
-            cout<<a[rs][col]<<" ";
+            for(int col=cs;col<=ce;col++)
+            {
+                cout<<a[rs][col]<<" ";
+            }
+            rs++;
+            for(int row=rs;row<=re;row++)
+            {
+                cout<<a[row][ce]<<" ";
+            }
+            ce--;
+            for(int col=ce;col>=cs;col--)
+            {
+                cout<<a[re][col]<<" ";
+            }
+            re--;
+            for(int row=re;row>=rs;row--)
+            {
+                cout<<a[row][cs]<<" ";
+            }
+            cs++;
         }
-        cout<<"\n";
-        rs++;
-        for(int row=rs;row<=re;row++)
-        {
-            cout<<a[row][ce]<<" ";
-        }
-        cout<<"\n";
-        ce--;
-        for(int col=ce;col>=cs;col--)
-        {
-            cout<<a[re][col]<<" ";
-        }
-        cout<<"\n";
-        re--;
-        for(int row=re;row>=rs;row--)
-        {
-            cout<<a[row][cs]<<" ";
-        }
-        cout<<"\n";
-        cs++;
-    }
     return 0;
 }
